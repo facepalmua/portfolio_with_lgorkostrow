@@ -96,39 +96,10 @@
                     <div id="columnchart_material" style="width: 900px; height: 500px;"></div>
                 </div>
             </div>
-            <!-- если хочешь, можешь удалить-->
-            <?php 
-                
-                if ($col>sizeof($file)) { $col=sizeof($file); }
-                    echo "Последние <b>".$col."</b> посещений сайта:"; ?>
-
-                    <table width="680" cellspacing="1" cellpadding="1" border="0"
-                        STYLE="table-layout:fixed">
-                    <tr bgcolor="#eeeeee">
-                    <td class="zz" width="100"><b>Время и дата</b></td>
-                    <td class="zz" width="200"><b>Данные о посетителе</b></td>
-                    <td class="zz" width="100"><b>IP/прокси</b></td>
-                    <td class="zz" width="280"><b>Посещенный URL</b></td>
-                </tr>
-
-                <?php
-                    for ($si=sizeof($file)-1; $si+1>sizeof($file)-$col; $si--) {
-                        $string=explode("|",$file[$si]);
-                        $q1[$si]=$string[0]; // дата и время
-                        $q2[$si]=$string[1]; // имя бота
-                        $q3[$si]=$string[2]; // ip бота
-                        $q4[$si]=$string[3]; // адрес посещения
-                        echo '<tr bgcolor="#eeeeee"><td class="zz">'.$q1[$si].'</td>
-                        <td class="zz">'.$q2[$si].'</td>
-                        <td class="zz">'.$q3[$si].'</td>
-                        <td class="zz">'.$q4[$si].'</td></tr>';
-                    }
-                ?>
-                </table>
-                <!-- если хочешь, можешь удалить-->
+            
         </div>
     </div>
-    </div>
+    
     
     <script src="javascript/jeneral.js"></script>
 </body>

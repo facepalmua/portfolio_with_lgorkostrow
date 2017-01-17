@@ -236,19 +236,20 @@
         <!-- //container -->
     </div>
     <!-- //stn-portfolio -->
-    <section class="stn-video">
-        <h2 class="stn-heading container">Просто хорошее видео :)</h2>
+     <section class="stn-video">
+        <h2 class="stn-heading container">Какой сайт вам нужен?</h2>
         <div class="container">
-            <div class="row">
+            <div class="">
                 <div class="col-md-5">
-                    <p>Оставлю это здесь, так как иногда нужно делать паузу на приятные вещи.</p>
-                    <p>...Или я просто люблю такие видео :)</p>
-                    <a href="https://vk.com/zaharchyshyn" target="_blank" class="btn-ghost-grey">мой VK</a>
+                    <div id="wheelDiv"></div>
                 </div>
                 <!-- //col -->
-                <div class="col-md-6 col-md-offset-1 stn-video-col">
-                    <div class="videoWrapper">
-                        <iframe src="https://player.vimeo.com/video/193266260" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <div class="col-md-6 col-md-offset-1 ">
+                    <div class="stn-video" ">
+                        <p class="tab tab1 "><b>Интернет магазин</b> <br>В отличие от сайта-витрины, где клиент может увидеть наличие всех товаров, с помощью интернет-магазина клиент может еще и сделать заказ, выбрать вариант расчета, способ получения заказа и получить счет на оплату. Такой сайт должен быть удобным и функциональным, чтобы посетитель мог легко найти то, что ему нужно, отправить товар в корзину и оформить покупку в несколько кликов. Интернет-магазин существенно уменьшит Ваши расходы, так как не надо арендовать помещение для магазина, не надо платить заработную плату сотрудникам.</p>
+                        <p class="tab tab2 active-menu"><b>Корпоративный сайт</b> <br>Более серьезным видом представительства компании в Интернете являются корпоративные сайты. Это обязательный инструмент успешного бизнеса любой компании. В первую очередь, сайты подобного рода помогают формировать позитивный имидж компании, привлекают новых заказчиков, которые могут не знать о существовании Вашей фирмы на рынке, и, соответственно, расширяют рынок сбыта компании. С помощью корпоративного сайта клиенты и заказчики получают информацию о ценах на товары и услуги в удобном виде. Значительно увеличить прибыль Вы сможете путем предоставления возможности делать заказы Вашим клиентам прямо в Интернете, на Вашей страничке.</p>
+                        <p class="tab tab3 active-menu"><b>Landing page</b> <br>Целевая страница (англ. landing page, также «посадочная страница») — веб-страница, основной задачей которой является сбор контактных данных целевой аудитории. Используется для усиления эффективности рекламы, увеличения аудитории. Целевая страница обычно содержит информацию о товаре или услуге.</p>
+                        <p class="tab tab4 active-menu"><b>Визитка</b> <br>Именно тот набор информации, распространение которой в Интернете, несомненно, полезно как начинающим, так и акулам бизнеса. Это своеобразный справочник о фирме, который содержит все необходимые контактные данные и информацию о деятельности компании. Это должна быть краткая, четкая и самая важная информация о Вас, Вашей сфере деятельности, интересах. Не стоит перегружать Ваш сайт-визитку информацией, которая возможно не понадобится потенциальному клиенту или партнеру.</p>
                     </div>
                 </div>
                 <!-- /col -->
@@ -352,6 +353,56 @@
     <!-- Site Sripts -->
     <script src="assets/js/functions.js"></script>
     <script src="assets/js/1.js"></script>
+     <script type="text/javascript" src="assets/js/raphael.min.js"></script>
+    <script type="text/javascript" src="assets/js/raphael.icons.min.js"></script>
+    <script type="text/javascript" src="assets/js/wheelnav.min.js"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+
+        var wheel = new wheelnav("wheelDiv");
+
+        //This is the place for code snippets from the documentation -> http://wheelnavjs.softwaretailoring.net/documentation.html
+
+
+        wheel = new wheelnav('wheelDiv');
+        wheel.slicePathFunction = slicePath().CogBasePieSlice;
+        wheel.sliceHoverPathFunction = slicePath().CogSlice;
+        wheel.sliceSelectedPathFunction = slicePath().CogSlice;
+
+        wheel.sliceSelectedTransformFunction = sliceTransform().MoveMiddleTransform;
+        wheel.animatetime = 900;
+        // wheel.colors = colorpalette.gamebookers;
+        wheel.colors = ['#48525a', "#4bcaff"];
+        wheel.createWheel(["Магазин", "Корп. сайт", "Лендинг", "Визитка"]);
+        wheel.navItems[0].navigateFunction = function() {
+            $(".tab2").addClass("active-menu"); //добавляем класс текущей (нажатой)
+            $(".tab3").addClass("active-menu"); //добавляем класс текущей (нажатой)
+            $(".tab4").addClass("active-menu"); //добавляем класс текущей (нажатой)
+            $(".tab1").removeClass("active-menu", 1000); //добавляем класс текущей (нажатой)
+        };
+        wheel.navItems[1].navSlice.mousedown(function() {
+            $(".tab1").addClass("active-menu"); //добавляем класс текущей (нажатой)
+            $(".tab3").addClass("active-menu"); //добавляем класс текущей (нажатой)
+            $(".tab4").addClass("active-menu"); //добавляем класс текущей (нажатой)
+            $(".tab2").removeClass("active-menu"); //добавляем класс текущей (нажатой)
+        });
+        wheel.navItems[2].navSlice.mousedown(function() {
+            $(".tab1").addClass("active-menu"); //добавляем класс текущей (нажатой)
+            $(".tab2").addClass("active-menu"); //добавляем класс текущей (нажатой)
+            $(".tab4").addClass("active-menu"); //добавляем класс текущей (нажатой)
+            $(".tab3").removeClass("active-menu"); //добавляем класс текущей (нажатой)
+        });
+        wheel.navItems[3].navSlice.mousedown(function() {
+            $(".tab2").addClass("active-menu"); //добавляем класс текущей (нажатой)
+            $(".tab3").addClass("active-menu"); //добавляем класс текущей (нажатой)
+            $(".tab1").addClass("active-menu"); //добавляем класс текущей (нажатой)
+            $(".tab4").removeClass("active-menu"); //добавляем класс текущей (нажатой)
+        });
+        wheel.navigateWheel(0);
+        wheel.hoverPercent = 0.5;
+        wheel.selectedPercent = 1.1;
+    };
+    </script>
 </body>
 
 </html>
