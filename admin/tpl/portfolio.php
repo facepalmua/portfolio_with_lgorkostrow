@@ -48,17 +48,37 @@
         </sidebar>
         <div class="content">
             <h1>Добавления и просмотр секции "ПОРТФОЛИО"</h1>
-            <p>Сделай это!</p>
+            <p >Сделай это!</p>
             <div id="box">
-                <p>Путь к картинке:</p>
+                <p class="text-color-black text-color-black2" >Путь к картинке:</p>
+                <div class="form-portfolio">
                 <div class="fileform">
                     <div id="fileformlabel"></div>
                     <div class="selectbutton">Обзор</div>
                     <input placeholder="Путь к картинке" type="file" name="upload" id="upload" onchange="getName(this.value);" />
                 </div>
-                <p>Ссылка на сайт:</p>
+                <p class="text-color-black">Ссылка на сайт:</p>
                 <input type="text" id="site">
-                <p><a class="large button blue" id="add_site">Добавить</a></p>
+                <br>
+                <div class="select-wrapper">
+    <div class="select-arrow-3"></div><p class="text-color-black">Категория:</p>
+    
+    <select>
+     <option>выберите категорию:</option>
+                            <option>Landing</option>
+                            <option>Shop</option>
+                            <option>Corp.site</option>
+                            <option>Visit</option>
+    </select>
+  </div>
+  <br>
+                <a class="large button blue" id="add_site">Добавить</a>
+                
+                 
+            
+                </div>
+
+                <div class="line-portfolio"></div>
                 <div class="container">
                     <div class="portfolio-img">
                         <ul>
@@ -68,29 +88,7 @@
                                     <a class="delete_site large button red" id="<?=$s['id']?>">Удалить?</a><a class="large button orange">Редактировать?</a>
                                 </li>
                             <?php endforeach ?>
-                         <!--    <li><img src="../assets/img/thumb-1.jpg" alt="thumb1" width="240px" height="230px">
-                                <br>
-                                <a class="large button red">Удалить?</a><a class="large button orange">Редактировать?</a>
-                            </li>
-                            <li><img src="../assets/img/thumb-1.jpg" alt="thumb1" width="240px" height="230px">
-                                <br>
-                                <a class="large button red">Удалить?</a><a class="large button orange">Редактировать?</a>
-                            </li>
-                            <li><img src="../assets/img/thumb-1.jpg" alt="thumb1" width="240px" height="230px">
-                                <br>
-                                <a class="large button red">Удалить?</a><a class="large button orange">Редактировать?</a>
-                            </li>
-                            <li><img src="../assets/img/thumb-1.jpg" alt="thumb1" width="240px" height="230px">
-                                <br>
-                                <a class="large button red">Удалить?</a><a class="large button orange">Редактировать?</a>
-                            </li>
-                            <li><img src="../assets/img/thumb-1.jpg" alt="thumb1" width="240px" height="230px">
-                                <br>
-                                <a class="large button red">Удалить?</a><a class="large button orange">Редактировать?</a>
-                                <li><img src="../assets/img/thumb-1.jpg" alt="thumb1" width="240px" height="230px">
-                                    <br>
-                                    <a class="large button red">Удалить?</a><a class="large button orange">Редактировать?</a>
-                                </li> -->
+                         
                         </ul>
                     </div>
                 </div>
