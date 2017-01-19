@@ -25,6 +25,7 @@
 <![endif]-->
     <script src="assets/js/jQuery-v3.1.1.js"></script>
     <script src="assets/js/sweet-alert.js"></script>
+    <script src="assets/js/classie.js"></script>  
 </head>
 
 <body>
@@ -75,19 +76,19 @@
 </h2>
         <div class="container">
             <div class="row">
-                <div class="wow fadeInLeft col-md-6 col-lg-4">
+                <div class="wow fadeInLeft col-md-6 col-lg-4" data-wow-offset="100" >
                     <div class="sprite-computer"></div>
                     <h3>Макет</h3>
                     <p>Верстка вашего макета или создание макета для вашего сайта самостоятельно с учетом всех фирменых цветов, предоставим нескольно вариантов на выбор.</p>
                 </div>
                 <!-- //col -->
-                <div class="wow fadeInLeft col-md-6 col-lg-4">
+                <div class="wow fadeInLeft col-md-6 col-lg-4" data-wow-offset="170">
                     <div class="sprite-mobile"></div>
                     <h3>Адаптивность</h3>
                     <p>Создание адаптивного макета с помощью Twitter Bootstrap.</p>
                 </div>
                 <!-- //col -->
-                <div class="wow fadeInLeft col-md-6 col-lg-4">
+                <div class="wow fadeInLeft col-md-6 col-lg-4" data-wow-offset="200">
                     <div class="sprite-bag"></div>
                     <h3>Серьезность</h3>
                     <p>Соблюдение сроков и качественный код.</p>
@@ -100,7 +101,7 @@
         <!-- //.container -->
     </section>
     <!-- //.stn-services -->
-    <div class=" wow fadeInRight stn-portfolio" data-wow-offset="700">
+    <div class=" wow fadeInRight stn-portfolio" data-wow-offset="300">
         <section class="container tab-wrapper">
             <ul class="horizontal-nav black-font tab-menu">
                 <li><a href="#!" class="active">All</a></li>
@@ -237,7 +238,7 @@
         <!-- //container -->
     </div>
     <!-- //stn-portfolio -->
-     <section class="wow fadeInleft  stn-video">
+     <section class="wow fadeInLeft stn-video">
         <h2 class="stn-heading container">Какой сайт вам нужен?</h2>
         <div class="container">
             <div class="">
@@ -247,10 +248,10 @@
                 <!-- //col -->
                 <div class="col-md-6 col-md-offset-1 ">
                     <div class="stn-video" ">
-                        <p class="tab tab1 "><b>Интернет магазин</b> <br>В отличие от сайта-витрины, где клиент может увидеть наличие всех товаров, с помощью интернет-магазина клиент может еще и сделать заказ, выбрать вариант расчета, способ получения заказа и получить счет на оплату. Такой сайт должен быть удобным и функциональным, чтобы посетитель мог легко найти то, что ему нужно, отправить товар в корзину и оформить покупку в несколько кликов. Интернет-магазин существенно уменьшит Ваши расходы, так как не надо арендовать помещение для магазина, не надо платить заработную плату сотрудникам.</p>
-                        <p class="tab tab2 active-menu"><b>Корпоративный сайт</b> <br>Более серьезным видом представительства компании в Интернете являются корпоративные сайты. Это обязательный инструмент успешного бизнеса любой компании. В первую очередь, сайты подобного рода помогают формировать позитивный имидж компании, привлекают новых заказчиков, которые могут не знать о существовании Вашей фирмы на рынке, и, соответственно, расширяют рынок сбыта компании. С помощью корпоративного сайта клиенты и заказчики получают информацию о ценах на товары и услуги в удобном виде. Значительно увеличить прибыль Вы сможете путем предоставления возможности делать заказы Вашим клиентам прямо в Интернете, на Вашей страничке.</p>
-                        <p class="tab tab3 active-menu"><b>Landing page</b> <br>Целевая страница (англ. landing page, также «посадочная страница») — веб-страница, основной задачей которой является сбор контактных данных целевой аудитории. Используется для усиления эффективности рекламы, увеличения аудитории. Целевая страница обычно содержит информацию о товаре или услуге.</p>
-                        <p class="tab tab4 active-menu"><b>Визитка</b> <br>Именно тот набор информации, распространение которой в Интернете, несомненно, полезно как начинающим, так и акулам бизнеса. Это своеобразный справочник о фирме, который содержит все необходимые контактные данные и информацию о деятельности компании. Это должна быть краткая, четкая и самая важная информация о Вас, Вашей сфере деятельности, интересах. Не стоит перегружать Ваш сайт-визитку информацией, которая возможно не понадобится потенциальному клиенту или партнеру.</p>
+                        <p class="animated fadeInRight tab tab1 "><b>Интернет магазин</b> <br>В отличие от сайта-витрины, где клиент может увидеть наличие всех товаров, с помощью интернет-магазина клиент может еще и сделать заказ, выбрать вариант расчета, способ получения заказа и получить счет на оплату. Такой сайт должен быть удобным и функциональным, чтобы посетитель мог легко найти то, что ему нужно, отправить товар в корзину и оформить покупку в несколько кликов. Интернет-магазин существенно уменьшит Ваши расходы, так как не надо арендовать помещение для магазина, не надо платить заработную плату сотрудникам.</p>
+                        <p class="animated fadeInRight  tab tab2 active-menu"><b>Корпоративный сайт</b> <br>Более серьезным видом представительства компании в Интернете являются корпоративные сайты. Это обязательный инструмент успешного бизнеса любой компании. В первую очередь, сайты подобного рода помогают формировать позитивный имидж компании, привлекают новых заказчиков, которые могут не знать о существовании Вашей фирмы на рынке, и, соответственно, расширяют рынок сбыта компании. С помощью корпоративного сайта клиенты и заказчики получают информацию о ценах на товары и услуги в удобном виде. Значительно увеличить прибыль Вы сможете путем предоставления возможности делать заказы Вашим клиентам прямо в Интернете, на Вашей страничке.</p>
+                        <p class="animated fadeInRight  tab tab3 active-menu"><b>Landing page</b> <br>Целевая страница (англ. landing page, также «посадочная страница») — веб-страница, основной задачей которой является сбор контактных данных целевой аудитории. Используется для усиления эффективности рекламы, увеличения аудитории. Целевая страница обычно содержит информацию о товаре или услуге.</p>
+                        <p class="animated fadeInRight  tab tab4 active-menu"><b>Визитка</b> <br>Именно тот набор информации, распространение которой в Интернете, несомненно, полезно как начинающим, так и акулам бизнеса. Это своеобразный справочник о фирме, который содержит все необходимые контактные данные и информацию о деятельности компании. Это должна быть краткая, четкая и самая важная информация о Вас, Вашей сфере деятельности, интересах. Не стоит перегружать Ваш сайт-визитку информацией, которая возможно не понадобится потенциальному клиенту или партнеру.</p>
                     </div>
                 </div>
                 <!-- /col -->
@@ -295,7 +296,7 @@
         </div>
     </section>
     <!-- //stn-testimonials -->
-    <section class="wow fadeInUp stn-contact" >
+    <section class="wow fadeInRight stn-contact" data-wow-offset="300">
         <h2 class="stn-heading container"><a name="Contact" id="Contact" href="#contact"></a>Contact</h2>
         <div class="container">
             <form action="#!" class="row">
@@ -314,12 +315,22 @@
                 </div>
                 <div class="col-md-5 col-md-pull-6">
                     <div class="form-group">
-                        <label for="name">Full name</label>
-                        <input id="name" type="text" class="form-control">
+                        
+                        <span class="input input--jiro">
+                    <input id="name" class="form-control input__field input__field--jiro" type="text" id="input-10" />
+                    <label class="input__label input__label--jiro" for="input-10">
+                        <span class="input__label-content input__label-content--jiro">Имя</span>
+                    </label>
+                </span>
                     </div>
                     <div class="form-group">
-                        <label for="mail">Email</label>
-                        <input id="mail" type="email" class="form-control">
+                        
+                         <span class="input input--jiro">
+                    <input id="mail" class="form-control input__field input__field--jiro" type="text" id="input-10" />
+                    <label class="input__label input__label--jiro" for="input-10">
+                        <span class="input__label-content input__label-content--jiro">Почта</span>
+                    </label>
+                </span>
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -327,12 +338,14 @@
                         <label for="message">Message</label>
                         <textarea id="Message" cols="30" rows="10" class="form-control"></textarea>
                     </div>
+
                 </div>
                 <div class="col-sm-6">
                     <button type="submit" class="btn-submit">Message</button>
                 </div>
             </form>
         </div>
+
     </section>
     <!-- //stn-cotact -->
     <footer class="site-footer">
@@ -427,6 +440,41 @@
     <script>
     new WOW().init();
     </script>
+    <script>
+            (function() {
+                // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+                if (!String.prototype.trim) {
+                    (function() {
+                        // Make sure we trim BOM and NBSP
+                        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                        String.prototype.trim = function() {
+                            return this.replace(rtrim, '');
+                        };
+                    })();
+                }
+
+                [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+                    // in case the input is already filled..
+                    if( inputEl.value.trim() !== '' ) {
+                        classie.add( inputEl.parentNode, 'input--filled' );
+                    }
+
+                    // events:
+                    inputEl.addEventListener( 'focus', onInputFocus );
+                    inputEl.addEventListener( 'blur', onInputBlur );
+                } );
+
+                function onInputFocus( ev ) {
+                    classie.add( ev.target.parentNode, 'input--filled' );
+                }
+
+                function onInputBlur( ev ) {
+                    if( ev.target.value.trim() === '' ) {
+                        classie.remove( ev.target.parentNode, 'input--filled' );
+                    }
+                }
+            })();
+        </script>
 </body>
 
 </html>
