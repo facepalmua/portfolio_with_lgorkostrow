@@ -75,19 +75,19 @@
 </h2>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-4">
+                <div class="wow fadeInLeft col-md-6 col-lg-4">
                     <div class="sprite-computer"></div>
                     <h3>Макет</h3>
                     <p>Верстка вашего макета или создание макета для вашего сайта самостоятельно с учетом всех фирменых цветов, предоставим нескольно вариантов на выбор.</p>
                 </div>
                 <!-- //col -->
-                <div class="col-md-6 col-lg-4">
+                <div class="wow fadeInLeft col-md-6 col-lg-4">
                     <div class="sprite-mobile"></div>
                     <h3>Адаптивность</h3>
                     <p>Создание адаптивного макета с помощью Twitter Bootstrap.</p>
                 </div>
                 <!-- //col -->
-                <div class="col-md-6 col-lg-4">
+                <div class="wow fadeInLeft col-md-6 col-lg-4">
                     <div class="sprite-bag"></div>
                     <h3>Серьезность</h3>
                     <p>Соблюдение сроков и качественный код.</p>
@@ -100,7 +100,7 @@
         <!-- //.container -->
     </section>
     <!-- //.stn-services -->
-    <div class="stn-portfolio">
+    <div class=" wow fadeInRight stn-portfolio" data-wow-offset="700">
         <section class="container tab-wrapper">
             <ul class="horizontal-nav black-font tab-menu">
                 <li><a href="#!" class="active">All</a></li>
@@ -237,7 +237,7 @@
         <!-- //container -->
     </div>
     <!-- //stn-portfolio -->
-     <section class="stn-video">
+     <section class="wow fadeInleft  stn-video">
         <h2 class="stn-heading container">Какой сайт вам нужен?</h2>
         <div class="container">
             <div class="">
@@ -260,7 +260,7 @@
         <!-- /container -->
     </section>
     <!-- //stn-video -->
-    <section class="stn-twitter">
+    <section class="wow fadeInRight stn-twitter">
         <h2 class="stn-heading container">Twitter <i class="icon-twitter stn-twitter-icon"></i></h2>
         <div class="container">
             <div class="row">
@@ -271,7 +271,7 @@
         </div>
     </section>
     <!-- //stn-twitter -->
-    <section class="stn-about">
+    <section class="wow fadeInleft  stn-about">
         <h2 class="stn-heading container">Почему именно стоит заказать сайт здесь?</h2>
         <div class="container">
             <div class="row">
@@ -285,7 +285,7 @@
         <!-- //container -->
     </section>
     <!-- //stn-about -->
-    <section class="stn-testimonials">
+    <section class="wow fadeInLeft stn-testimonials">
         <h2 class="stn-heading container black-line">Цитата дня <i class="icon-quote"></i></h2>
         <div class="container">
             <blocquote class="tst-quote">
@@ -295,7 +295,7 @@
         </div>
     </section>
     <!-- //stn-testimonials -->
-    <section class="stn-contact">
+    <section class="wow fadeInUp stn-contact" >
         <h2 class="stn-heading container"><a name="Contact" id="Contact" href="#contact"></a>Contact</h2>
         <div class="container">
             <form action="#!" class="row">
@@ -358,6 +358,7 @@
      <script type="text/javascript" src="assets/js/raphael.min.js"></script>
     <script type="text/javascript" src="assets/js/raphael.icons.min.js"></script>
     <script type="text/javascript" src="assets/js/wheelnav.min.js"></script>
+    <script src="assets/js/SmoothScroll.js"></script>
     <script type="text/javascript">
     window.onload = function() {
 
@@ -422,6 +423,9 @@
         wheel.hoverPercent = 0.5;
         wheel.selectedPercent = 1.1;
     };
+    </script>
+    <script>
+    new WOW().init();
     </script>
 </body>
 
