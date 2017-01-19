@@ -13,6 +13,7 @@
     <!-- Import main styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/sweet-alert.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -60,7 +61,7 @@
             <!-- //.container -->
         </nav>
         <!-- //.site-nav -->
-        <div class="container">
+        <div class="wow fadeInUp container">
             <h1 class="hero-heading">
       <span>“Cайт, которым Вы будете гордится.</span> <br>
       <span>Сайт, который принесет вам прибыль”</span>
@@ -349,6 +350,7 @@
     </footer>
     <!-- jQuery for older IE -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/headhesive.js"></script>
     <!-- Site Sripts -->
     <script src="assets/js/functions.js"></script>
@@ -380,24 +382,42 @@
             $(".tab4").addClass("active-menu"); //добавляем класс текущей (нажатой)
             $(".tab1").removeClass("active-menu", 1000); //добавляем класс текущей (нажатой)
         };
-        wheel.navItems[1].navSlice.mousedown(function() {
+        wheel.navItems[1].navigateFunction = function() {
             $(".tab1").addClass("active-menu"); //добавляем класс текущей (нажатой)
             $(".tab3").addClass("active-menu"); //добавляем класс текущей (нажатой)
             $(".tab4").addClass("active-menu"); //добавляем класс текущей (нажатой)
-            $(".tab2").removeClass("active-menu"); //добавляем класс текущей (нажатой)
-        });
-        wheel.navItems[2].navSlice.mousedown(function() {
+            $(".tab2").removeClass("active-menu", 1000); //добавляем класс текущей (нажатой)
+        };
+        // wheel.navItems[1].navSlice.mousedown(function() {
+        //     $(".tab1").addClass("active-menu"); //добавляем класс текущей (нажатой)
+        //     $(".tab3").addClass("active-menu"); //добавляем класс текущей (нажатой)
+        //     $(".tab4").addClass("active-menu"); //добавляем класс текущей (нажатой)
+        //     $(".tab2").removeClass("active-menu"); //добавляем класс текущей (нажатой)
+        // });
+        wheel.navItems[2].navigateFunction = function() {
             $(".tab1").addClass("active-menu"); //добавляем класс текущей (нажатой)
             $(".tab2").addClass("active-menu"); //добавляем класс текущей (нажатой)
             $(".tab4").addClass("active-menu"); //добавляем класс текущей (нажатой)
-            $(".tab3").removeClass("active-menu"); //добавляем класс текущей (нажатой)
-        });
-        wheel.navItems[3].navSlice.mousedown(function() {
+            $(".tab3").removeClass("active-menu", 1000); //добавляем класс текущей (нажатой)
+        };
+        // wheel.navItems[2].navSlice.mousedown(function() {
+        //     $(".tab1").addClass("active-menu"); //добавляем класс текущей (нажатой)
+        //     $(".tab2").addClass("active-menu"); //добавляем класс текущей (нажатой)
+        //     $(".tab4").addClass("active-menu"); //добавляем класс текущей (нажатой)
+        //     $(".tab3").removeClass("active-menu"); //добавляем класс текущей (нажатой)
+        // });
+        wheel.navItems[3].navigateFunction = function() {
             $(".tab2").addClass("active-menu"); //добавляем класс текущей (нажатой)
             $(".tab3").addClass("active-menu"); //добавляем класс текущей (нажатой)
             $(".tab1").addClass("active-menu"); //добавляем класс текущей (нажатой)
-            $(".tab4").removeClass("active-menu"); //добавляем класс текущей (нажатой)
-        });
+            $(".tab4").removeClass("active-menu", 1000); //добавляем класс текущей (нажатой)
+        };
+        // wheel.navItems[3].navSlice.mousedown(function() {
+        //     $(".tab2").addClass("active-menu"); //добавляем класс текущей (нажатой)
+        //     $(".tab3").addClass("active-menu"); //добавляем класс текущей (нажатой)
+        //     $(".tab1").addClass("active-menu"); //добавляем класс текущей (нажатой)
+        //     $(".tab4").removeClass("active-menu"); //добавляем класс текущей (нажатой)
+        // });
         wheel.navigateWheel(0);
         wheel.hoverPercent = 0.5;
         wheel.selectedPercent = 1.1;

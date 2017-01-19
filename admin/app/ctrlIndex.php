@@ -35,7 +35,19 @@ class ctrlIndex extends ctrl {
 		// 	$this->db->query("INSERT INTO post(title,post,ctime) VALUES(?,?,?)",htmlspecialchars($_POST['title']), $_POST['post'],time());
 		// 	header("Location: /");
 		// }
-		$this->messages = $this->db->query("SELECT * FROM messages WHERE active= ? ORDER BY id DESC",1)->all();
+		$url = explode('/', $_SERVER['REQUEST_URI']);
+		if ( isset($url[4]) ){
+			$this->offset = $url[4]*6-6;
+			$this->page = $url[4];
+			$this->messages = $this->db->query("SELECT * FROM messages ORDER BY id DESC LIMIT 6  OFFSET $this->offset")->all();
+		}
+		else {
+			$this->messages = $this->db->query("SELECT * FROM messages ORDER BY id DESC LIMIT 6 ")->all();
+			$this->page = 1;
+		}
+		
+		// $this->n = $this->db->query("SELECT * FROM messages ORDER BY id DESC")->num();
+		$this->n = $this->db->query("SELECT id FROM messages")->num();
 		$this->out('message.php');
 		
 	}

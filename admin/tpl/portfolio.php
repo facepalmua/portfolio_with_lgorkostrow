@@ -63,12 +63,12 @@
                 <div class="select-wrapper">
     <div class="select-arrow-3"></div><p class="text-color-black">Категория:</p>
     
-    <select>
-     <option>выберите категорию:</option>
-                            <option>Landing</option>
-                            <option>Shop</option>
-                            <option>Corp.site</option>
-                            <option>Visit</option>
+    <select id="cat" name="cat">
+     <option>Выберите категорию:</option>
+                            <option value="Landing page">Landing page</option>
+                            <option value="Интернет магазин">Интернет магазин </option>
+                            <option value="Корпоративный сайт">Корпоративный сайт</option>
+                            <option value="Визитка">Визитка</option>
     </select>
   </div>
   <br>

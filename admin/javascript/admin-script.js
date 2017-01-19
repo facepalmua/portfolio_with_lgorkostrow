@@ -24,10 +24,11 @@ $(document).ready(function() {
     $("#add_site").click(function() {
         var img = $("#upload").val();
         var site = $("#site").val();
-        alert(img);
+        var cat = $("#cat").val();
+        
         $.ajax({
             url: 'lib/add-site.php',
-            data: "img=" + img + "&site=" + site,
+            data: "img=" + img + "&site=" + site + "&cat=" + cat,
             type: 'post',
             success: function(html) {
 
@@ -68,7 +69,6 @@ $(document).ready(function() {
 
     $(".box").click(function() {
         id = $(this).attr("id");
-
         $.ajax({
             url: 'lib/read-message.php',
             data: "id=" + id,

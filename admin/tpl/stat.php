@@ -13,8 +13,8 @@
 
    <?php 
         $file=file("../assets/php/stat/stat.log");
-        $col=50;
-        if ($col>sizeof($file)) { $col=sizeof($file); }
+        $col=sizeof($file);
+        
         $d1=$d2=$d3=$d4=$d5=$d6=$d7 = 0; 
         $day1 = date("d.m.Y", strtotime("-6 day",strtotime(date("d.m.Y"))));
         $day2 = date("d.m.Y", strtotime("-5 day",strtotime(date("d.m.Y"))));

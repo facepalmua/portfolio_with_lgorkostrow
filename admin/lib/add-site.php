@@ -7,9 +7,9 @@
         public function add_site(){
             $img = trim($_POST["img"]);
             $site = addslashes(trim($_POST["site"]));
+            $cat = addslashes(trim($_POST["cat"]));
             
-            
-            $this->db->query("INSERT INTO site(img,site) VALUES(?,?)",$img, $site);
+            $this->db->query("INSERT INTO site(img,site,cat) VALUES(?,?,?)",$img, $site,$cat);
 
         }
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Янв 16 2017 г., 16:52
+-- Время создания: Янв 18 2017 г., 09:50
 -- Версия сервера: 10.1.16-MariaDB
 -- Версия PHP: 7.0.9
 
@@ -41,7 +41,14 @@ CREATE TABLE `messages` (
 
 INSERT INTO `messages` (`id`, `email`, `name`, `text`, `active`, `datetime`) VALUES
 (15, 'lgorkostrow@gmail.com', 'Игорь Костров', 'Пидор', 0, '15:37:12'),
-(17, '2', '1', '3', 0, '17:44:43');
+(17, '2', '1', '3', 0, '17:44:43'),
+(18, '2', '1', '3', 0, '10:32:43'),
+(19, '2', '1', '3', 1, '10:32:48'),
+(20, '2', '1', '3', 1, '10:32:52'),
+(21, '2', '1', '3', 1, '10:32:55'),
+(22, '2', '1', '3', 0, '10:32:59'),
+(23, '2', '1', '3', 0, '10:33:02'),
+(24, '22', '1', '333', 1, '10:33:06');
 
 -- --------------------------------------------------------
 
@@ -52,15 +59,16 @@ INSERT INTO `messages` (`id`, `email`, `name`, `text`, `active`, `datetime`) VAL
 CREATE TABLE `site` (
   `id` int(11) NOT NULL,
   `img` varchar(255) NOT NULL,
-  `site` varchar(255) NOT NULL
+  `site` varchar(255) NOT NULL,
+  `cat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `site`
 --
 
-INSERT INTO `site` (`id`, `img`, `site`) VALUES
-(4, 'C:/xampp1/htdocs/portfolio/assets/img/site/ms.png', 'http://malsontest.dp.ua/');
+INSERT INTO `site` (`id`, `img`, `site`, `cat`) VALUES
+(4, 'C:/xampp1/htdocs/portfolio/assets/img/site/ms.png', 'http://malsontest.dp.ua/', '');
 
 --
 -- Индексы сохранённых таблиц
@@ -86,12 +94,12 @@ ALTER TABLE `site`
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT для таблицы `site`
 --
 ALTER TABLE `site`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
