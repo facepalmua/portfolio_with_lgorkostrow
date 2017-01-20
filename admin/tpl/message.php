@@ -62,6 +62,22 @@
                     }
                 ?>
             </div>
+            <section class="pagination">
+                    <ul>
+                        <li><a href="#" title="Назад" >&laquo;</a></li>
+                        <li><a href="#" title="Страница 1">1</a></li>
+                        <li><a href="#" title="Страница 2">2</a></li>
+                        <li><a href="#" title="Страница 3" >3</a></li>
+                        <li><a href="#" title="Страница 4" >4</a></li>
+                        <li><a href="#" title="Страница 5" >5</a></li>
+                        <li><a href="#" title="Страница 6" >6</a></li>
+                        <li><a href="#" title="Страница 7" >7</a></li>
+                        <li><a href="#" title="Страница 8" >8</a></li>
+                        <li><a href="#" title="Страница 9" >9</a></li>
+                        <li><a href="#" title="Страница 10">10</a></li>
+                        <li><a href="#" title="Вперед">&raquo;</a></li>
+                    </ul>
+            </section>
         </div>
         
     </div>

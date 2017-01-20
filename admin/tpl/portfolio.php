@@ -11,7 +11,7 @@
     <script type="text/javascript" src="javascript/jQuery-v3.1.1.js"></script>
     <script type="text/javascript" src="javascript/admin-script.js"></script>
     <script src="../assets/js/sweet-alert.js"></script>
-   
+
     <script>
     function getName(str) {
         if (str.lastIndexOf('\\')) {
@@ -56,13 +56,14 @@
                     <div id="fileformlabel"></div>
                     <div class="selectbutton">Обзор</div>
                     <input placeholder="Путь к картинке" type="file" name="upload" id="upload" onchange="getName(this.value);" />
+
                 </div>
                 <p class="text-color-black">Ссылка на сайт:</p>
                 <input type="text" id="site">
                 <br>
                 <div class="select-wrapper">
     <div class="select-arrow-3"></div><p class="text-color-black">Категория:</p>
-    
+
     <select id="cat" name="cat">
      <option>Выберите категорию:</option>
                             <option value="Landing page">Landing page</option>
@@ -73,9 +74,9 @@
   </div>
   <br>
                 <a class="large button blue" id="add_site">Добавить</a>
-                
-                 
-            
+
+
+
                 </div>
 
                 <div class="line-portfolio"></div>
@@ -83,12 +84,12 @@
                     <div class="portfolio-img">
                         <ul>
                             <?php foreach($this->site as $s) : ?>
-                                <li><a href="<?=$s['site']?>"><img src="<?=$s['img']?>" alt="thumb1" width="240px" height="230px"></a>
+                                <li><a href="<?=$s['site']?>"><img src="../uploads/<?=$s['img']?>" alt="thumb1" width="240px" height="230px"></a>
                                     <br>
-                                    <a class="delete_site large button red" id="<?=$s['id']?>">Удалить?</a><a class="large button orange">Редактировать?</a>
+                                    <a class="delete_site large button red" id="<?=$s['id']?>">Удалить?</a><a class="edit_site large button orange" id="<?=$s['id']?>">Редактировать?</a>
                                 </li>
                             <?php endforeach ?>
-                         
+
                         </ul>
                     </div>
                 </div>

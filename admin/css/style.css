@@ -389,7 +389,78 @@ a.mobile:active {
     height: 30px;
 }
 
+#page {
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+#page span {
+    border: 2px solid white;
+    padding: 0 10px;
+    color: white;
+}
+
 #page a {
     margin-top: 10px;
     padding: 15px;
+    color: black;
+}
+
+/////////////////////////////////////Pagination
+.pagination {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #ddd;
+}
+
+.pagination ul {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.pagination ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 5px 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.pagination ul li a,
+.pagination ul li a:visited {
+    display: block;
+    text-decoration: none;
+    color: #555555;
+    background: url(bgnav.png) repeat-x scroll 0 0 #efefef;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 0 1px #fff, 1px 1px 3px #ddd;
+    -moz-box-shadow: 0 0 0 1px #fff, 1px 1px 3px #ddd;
+    -ms-box-shadow: 0 0 0 1px #fff, 1px 1px 3px #ddd;
+    box-shadow: 0 0 0 1px #fff, 1px 1px 3px #ddd;
+    height: 28px;
+    width: 28px;
+    line-height: 26px;
+    top: -1px;
+    text-shadow: 1px 1px #fff;
+}
+
+.pagination ul li a:hover {
+    display: block;
+    background: url(bgnav.png) repeat-x scroll 0 -24px #efefef;
+    text-decoration: none;
+}
+
+.pagination ul li a:active {
+    box-shadow: none;
+    position: relative;
+    top: 1px;
 }

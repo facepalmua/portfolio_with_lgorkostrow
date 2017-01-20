@@ -1,10 +1,10 @@
 function check_messages() {
     var str;
     $.ajax({
-        url: "lib/check-messages.php",
+        url: "lib/messages.php?action=check",
         type: 'post',
         success: function(html) {
-            //alert("1"); 
+            //alert("1");
             if (html > 0) {
                 $(".active-message").show();
                 $("#quantity").html(html);
@@ -17,23 +17,54 @@ function check_messages() {
 
 $(document).ready(function() {
 
-    // $("#upload").change(function (){
-    //    var fileName = $(this).val();
-    //    $(this).text(fileName);
-    // });
-    $("#add_site").click(function() {
-        var img = $("#upload").val();
-        var site = $("#site").val();
-        var cat = $("#cat").val();
-        
+    var files;
+
+    $('#upload').change(function(){
+        files = this.files;
+
+        var data = new FormData();
+        $.each( files, function( key, value ){
+            data.append( key, value );
+        });
+
         $.ajax({
-            url: 'lib/add-site.php',
-            data: "img=" + img + "&site=" + site + "&cat=" + cat,
+            url: 'lib/site.php?action=uploadfiles',
+            data: data, //+ "&action=" + "add" + "&img=" + img + "&site=" + site + "&cat=" + cat,
             type: 'post',
+            processData: false,
+            contentType: false,
+            dataType: 'html',
             success: function(html) {
 
-                location.reload();
+                sweetAlert("", "Картинка загружена", "success");
+                //location.reload();
 
+            }
+
+        });
+
+    });
+
+    // $("#add_site").click(function() {
+        // var img = $("#upload").val();
+        // var site = $("#site").val();
+        // var cat = $("#cat").val();
+    $('#add_site').click(function( event ){
+        var img = $("#fileformlabel").text();
+        var site = $("#site").val();
+        var cat = $("#cat").val();
+
+        $.ajax({
+            url: 'lib/site.php?action=add',
+            data: {
+                img:$("#fileformlabel").text(),
+                site:$("#site").val(),
+                cat:$("#cat").val()
+            },
+            type: 'post',
+            dataType: 'html',
+            success: function(html) {
+                location.reload();
             }
 
         });
@@ -44,7 +75,6 @@ $(document).ready(function() {
 
     $('.delete_site').click(function() {
         delete_id = $(this).attr("id");
-        //alert("1");
         swal({
                 title: "Вы уверены?",
                 text: "Удалить cайт!",
@@ -56,8 +86,10 @@ $(document).ready(function() {
             function() {
                 $.ajax({
                     type: "POST",
-                    url: "lib/delete-site.php",
-                    data: "id=" + delete_id,
+                    url: "lib/site.php?action=delete",
+                    data: {
+                        id:delete_id
+                    },
                     dataType: "html",
                     cache: false,
                     success: function(html) {
@@ -67,10 +99,40 @@ $(document).ready(function() {
             });
     });
 
+    $('.edit_site').click(function() {
+        edit_id = $(this).attr("id");
+        swal({
+                title: "Вы уверены?",
+                text: "Редактировать cайт!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Да!"
+            },
+            function() {
+                $.ajax({
+                    type: "POST",
+                    url: "lib/site.php?action=edit",
+                    data: {
+                        id:edit_id,
+                        img:$("#fileformlabel").text(),
+                        site:$("#site").val(),
+                        cat:$("#cat").val()
+                    },
+                    dataType: "html",
+                    cache: false,
+                    success: function(html) {
+                        location.reload();
+                    }
+                });
+            });
+    });
+
+
     $(".box").click(function() {
         id = $(this).attr("id");
         $.ajax({
-            url: 'lib/read-message.php',
+            url: 'lib/messages.php?action=read',
             data: "id=" + id,
             type: 'post',
             success: function(html) {
