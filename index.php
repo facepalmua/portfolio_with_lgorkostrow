@@ -113,7 +113,7 @@
             <h2 class="stn-heading black-line"><a name="Portfolio" id="Portfolio"></a>Portfolio</h2>
             <div class="row thumbs-row">
                 <div class="col-sm-6 col-md-3">
-                    <a href="#!" class="thumb-1"></a>
+                    <a href="#!" class="thumb-1"><img src="assets/img/thumb-1.jpg" class="thumb-0" alt="img"></a>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <a href="#!" class="thumb-2"></a>
@@ -474,6 +474,9 @@
                     }
                 }
             })();
+        </script>
+        <script type='text/javascript'>
+            QueryLoader.init();
         </script>
 </body>
 
