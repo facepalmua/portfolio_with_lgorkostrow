@@ -464,3 +464,7 @@ a.mobile:active {
     position: relative;
     top: 1px;
 }
+
+#active-page {
+    color: red;
+}

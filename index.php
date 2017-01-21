@@ -64,7 +64,7 @@
         <!-- //.site-nav -->
         <div class="wow fadeInUp container">
             <h1 class="hero-heading">
-      <span>“Cайт, которым Вы будете гордится.</span> <br>
+      <span>“Cайт, которым Вы будете гордиться.</span> <br>
       <span>Сайт, который принесет вам прибыль”</span>
       </h1>
         </div>

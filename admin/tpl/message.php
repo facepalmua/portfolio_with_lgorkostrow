@@ -39,49 +39,48 @@
             <?php foreach($this->messages as $m) : ?>
                 <div class="box" id="<?=$m["id"]?>">
                     <div class="box-top">Увдомления для Вас от <b><?=$m["name"]?></b> В <b><?=$m["datetime"]?></b> Почта: <b><?=$m["email"]?></b></div>
-                    <div class="box-panel"><?=$m["text"]?> 
+                    <div class="box-panel"><?=$m["text"]?>
                     <?php
                         if ( $m["active"] == 1 ){
                             echo '<span class="active-message"><img src="images/znak.png" alt="znak" width="20px" height="20px"></span>';
                         }
                     ?>
-                    
+
                     </div>
                 </div>
             <?php endforeach ?>
-            <div id="page">
-                <?php 
-                    for ($i=1; $i <= ceil($this->n/6) ; $i++) { 
-                        if ( $this->page == $i ){
-                            echo '<span >'.$i.'</span>';
-                        }
-                        else {
+            <!-- <div id="page"> -->
+                <section class="pagination">
+                        <ul>
 
-                            echo '<a href="?message/'.$i.'">'.$i.'</a>'; 
-                        }
-                    }
-                ?>
-            </div>
-            <section class="pagination">
-                    <ul>
-                        <li><a href="#" title="Назад" >&laquo;</a></li>
-                        <li><a href="#" title="Страница 1">1</a></li>
-                        <li><a href="#" title="Страница 2">2</a></li>
-                        <li><a href="#" title="Страница 3" >3</a></li>
-                        <li><a href="#" title="Страница 4" >4</a></li>
-                        <li><a href="#" title="Страница 5" >5</a></li>
-                        <li><a href="#" title="Страница 6" >6</a></li>
-                        <li><a href="#" title="Страница 7" >7</a></li>
-                        <li><a href="#" title="Страница 8" >8</a></li>
-                        <li><a href="#" title="Страница 9" >9</a></li>
-                        <li><a href="#" title="Страница 10">10</a></li>
-                        <li><a href="#" title="Вперед">&raquo;</a></li>
-                    </ul>
-            </section>
+                            <?php
+                                if ($this->page != 1) {
+                                    $page = $this->page-1;
+                                    echo '<li><a href="?message/'.$page.'" title="Назад" >&laquo;</a></li>';
+                                }
+                                for ($i=1; $i <= ceil($this->n/6) ; $i++) {
+                                    if ( $this->page == $i ){
+                                        echo '<li><a id="active-page" title="Страница '.$i.'">'.$i.'</a></li>';
+                                    }
+                                    else {
+                                        echo '<li><a href="?message/'.$i.'" title="Страница '.$i.'">'.$i.'</a></li>';
+                                    }
+                                }
+                                if ($this->page != ceil($this->n/6)) {
+                                    $page = $this->page+1;
+                                    echo '<li><a href="?message/'.$page.'" title="Вперед">&raquo;</a></li>';
+                                }
+                            ?>
+
+
+                        </ul>
+                </section>
+
+
         </div>
-        
+
     </div>
-    
+
     <script src="javascript/jeneral.js"></script>
 </body>
 
