@@ -128,7 +128,7 @@ $(document).ready(function() {
     });
 
 
-    $(".box").click(function() {
+    $(".box-top-active").click(function() {
         id = $(this).attr("id");
         $.ajax({
             url: '/lib/messages.php?action=read',
@@ -141,6 +141,60 @@ $(document).ready(function() {
             }
 
         });
+    });
+
+    $(".answer").click(function() {
+        $(".container-clicked").show();
+        $(".clicked").show();
+        id = $(this).attr("id");
+        mail = $(".mail"+id).text();
+        $("#destination").val(mail);
+    });
+
+    $("#close-msg").click(function() {
+        $(".container-clicked").hide();
+        $(".clicked").hide();
+    });
+
+    $('.delete-message').click(function() {
+        delete_id = $(this).attr("id");
+        swal({
+                title: "Вы уверены?",
+                text: "Удалить сообщение!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Да, удалить!"
+            },
+            function() {
+                $.ajax({
+                    type: "POST",
+                    url: "/lib/messages.php?action=delete",
+                    data: {
+                        id:delete_id
+                    },
+                    dataType: "html",
+                    cache: false,
+                    success: function(html) {
+                        location.reload();
+                    }
+                });
+            });
+    });
+
+    $(".send").click(function() {
+        sweetAlert("хуй :3");
+        // $.ajax({
+        //     url: '/lib/messages.php?action=read',
+        //     data: "id=" + id,
+        //     type: 'post',
+        //     success: function(html) {
+        //
+        //         location.reload();
+        //
+        //     }
+        //
+        // });
     });
 
 });

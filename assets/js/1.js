@@ -38,7 +38,6 @@ $(document).ready(function() {
                 data : "name=" + name + "&mail=" + mail + "&text=" + text,
                 type:'post',
                 success:function (data) {
-                    alert(data);
                     sweetAlert("", "Спасибо, с вами свяжутся в ближайшее время!", "success");
                 }
 

@@ -145,6 +145,16 @@ ul#nav li a.selected {
     font-style: italic;
 }
 
+.box-top-active {
+    color: #fff;
+    text-shadow: 1px 2px black;
+    background-color: red;
+    padding: 5px;
+    padding-left: 15px;
+    font-family: "RobotoLight";
+    font-style: italic;
+}
+
 .box-panel {
     padding: 15px;
     padding-bottom: 25;
@@ -434,6 +444,7 @@ a.mobile:active {
 
 .pagination ul li a,
 .pagination ul li a:visited {
+    margin-top: -10px;
     display: block;
     text-decoration: none;
     color: #555555;
@@ -475,6 +486,7 @@ a.mobile:active {
 }
 
 .container-clicked {
+    display: none;
     background-color: #95a5a6;
     background-size: cover;
     opacity: 0.8;
@@ -486,6 +498,7 @@ a.mobile:active {
 }
 
 .clicked {
+    display: none;
     position: absolute;
     top: 45%;
     left: 50%;

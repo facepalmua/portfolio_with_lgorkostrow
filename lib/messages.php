@@ -26,6 +26,13 @@
 
         }
 
+        public function delete_message(){
+            $id = trim($_POST["id"]);
+            echo"";
+            $this->db->query("DELETE FROM messages WHERE id = ?",$id);
+
+        }
+
 
     }
     $messages = new messages();
@@ -44,6 +51,9 @@
             $messages->read_message();
             break;
 
+        case 'delete':
+            $messages->delete_message();
+            break;
 
 
         default:

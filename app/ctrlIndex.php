@@ -44,12 +44,12 @@ class ctrlIndex extends ctrl {
 		// }
 		$url = explode('/', $_SERVER['REQUEST_URI']);
 		if ( isset($url[3]) && !empty($url[3])){
-			$this->offset = $url[3]*6-6;
+			$this->offset = $url[3]*5-5;
 			$this->page = $url[3];
-			$this->messages = $this->db->query("SELECT * FROM messages ORDER BY id DESC LIMIT 6  OFFSET $this->offset")->all();
+			$this->messages = $this->db->query("SELECT * FROM messages ORDER BY id DESC LIMIT 5  OFFSET $this->offset")->all();
 		}
 		else {
-			$this->messages = $this->db->query("SELECT * FROM messages ORDER BY id DESC LIMIT 6 ")->all();
+			$this->messages = $this->db->query("SELECT * FROM messages ORDER BY id DESC LIMIT 5 ")->all();
 			$this->page = 1;
 		}
 
