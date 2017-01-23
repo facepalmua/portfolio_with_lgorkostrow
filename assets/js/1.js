@@ -34,20 +34,21 @@ $(document).ready(function() {
         var text = $("#Message").val();
         if (name!="" && mail!="" && text!=""){
             $.ajax({
-                url:'assets/php/send-message.php',
+                url:'/lib/messages.php?action=send',
                 data : "name=" + name + "&mail=" + mail + "&text=" + text,
                 type:'post',
                 success:function (data) {
-                    sweetAlert("", "Спасибо, с вами свяжутся в ближайшее время!", "success");  
+                    alert(data);
+                    sweetAlert("", "Спасибо, с вами свяжутся в ближайшее время!", "success");
                 }
-                
+
             });
             $(".form-control").val("");
         }
         else {
             sweetAlert("", "Заполните все поля!", "error");
         }
-             
-    });  
+
+    });
 
 });

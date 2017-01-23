@@ -11,7 +11,7 @@
             $error = false;
             $files = array();
 
-            $uploaddir = '../../uploads/'; // . - текущая папка где находится submit.php
+            $uploaddir = '../uploads/'; // . - текущая папка где находится submit.php
 
             if( ! is_dir( $uploaddir ) ) mkdir( $uploaddir, 0777 );
 
@@ -25,7 +25,7 @@
             }
 
             $data = $error ? array('error' => 'Ошибка загрузки файлов.') : array('files' => $files );
-
+            echo"";
         }
 
         public function add_site(){

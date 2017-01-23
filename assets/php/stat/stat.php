@@ -1,11 +1,12 @@
 <?php
 	$file="assets/php/stat/stat.log";    // файл для записи истории посещения сайта
-	$col_zap=4999;    // ограничиваем количество строк log-файла 
+	$file_read = file("assets/php/stat/stat.log");
+	$col_zap=4999;    // ограничиваем количество строк log-файла
 
 	function getRealIpAddr() {
 		if (!empty($_SERVER['HTTP_CLIENT_IP']))        // Определяем IP
 	  		{ $ip=$_SERVER['HTTP_CLIENT_IP']; }
-	  	elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) 
+	  	elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
 	  		{ $ip=$_SERVER['HTTP_X_FORWARDED_FOR']; }
 	  	else { $ip=$_SERVER['REMOTE_ADDR']; }
 	  return $ip;
@@ -19,7 +20,15 @@
 	$date = date("d.m.Y");        // определяем дату и время события
 	$home = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];    // определяем страницу сайта
 	$lines = file($file);
-	while(count($lines) > $col_zap) array_shift($lines);
-	$lines[] = $date."|".$bot."|".$ip."|".$home."|\r\n";
-	file_put_contents($file, $lines);
+	$q = sizeof($file_read);
+	$string=explode("|",$file_read[$q-1]);
+	//echo $string[2];
+	//echo $ip;
+	//echo var_dump($string);
+	if ($string[2] != $ip){
+		while(count($lines) > $col_zap) array_shift($lines);
+		$lines[] = $date."|".$bot."|".$ip."|".$home."|\r\n";
+		file_put_contents($file, $lines);
+	}
+
 ?>

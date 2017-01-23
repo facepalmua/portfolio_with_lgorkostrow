@@ -2047,14 +2047,6 @@ label {
   margin-left: -25px;
   font-size: 1.6em;
 }
-.QOverlay {
-  background-color: #000000;
-  z-index: 9999;
-}
-.QLoader {
-  background-color: #CCCCCC;
-  height: 1px;
-}
 body {
   font-family: 'Segoe', Arial, sans-serif;
   font-size: 14px;

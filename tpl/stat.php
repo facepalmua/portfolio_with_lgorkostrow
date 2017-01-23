@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale= 1.0, user-scalable=no">
     <title>Statystic</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="javascript/jQuery-v3.1.1.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="/javascript/jQuery-v3.1.1.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="javascript/admin-script.js"></script>
-    
+    <script type="text/javascript" src="/javascript/admin-script.js"></script>
+
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-   <?php 
-        $file=file("../assets/php/stat/stat.log");
+   <?php
+        $file=file("assets/php/stat/stat.log");
         $col=sizeof($file);
-        
-        $d1=$d2=$d3=$d4=$d5=$d6=$d7 = 0; 
+
+        $d1=$d2=$d3=$d4=$d5=$d6=$d7 = 0;
         $day1 = date("d.m.Y", strtotime("-6 day",strtotime(date("d.m.Y"))));
         $day2 = date("d.m.Y", strtotime("-5 day",strtotime(date("d.m.Y"))));
         $day3 = date("d.m.Y", strtotime("-4 day",strtotime(date("d.m.Y"))));
@@ -77,13 +77,13 @@
         <sidebar>
             <ul id="nav">
                 <li>
-                    <a href="?stat" class="selected">Статистика</a>
+                    <a href="/admin/stat/" class="selected">Статистика</a>
                 </li>
                 <li>
-                    <a href="?portfolio">Добавления в портфолио</a>
+                    <a href="/admin/portfolio/">Добавления в портфолио</a>
                 </li>
                 <li>
-                    <a href="?message">Сообщения <span class="active-message"><img src="images/znak.png" alt="znak" width="20px" height="20px"><span id="quantity"></span></span></a>
+                    <a href="/admin/message/">Сообщения <span class="active-message"><img src="/images/znak.png" alt="znak" width="20px" height="20px"><span id="quantity"></span></span></a>
                 </li>
             </ul>
         </sidebar>
@@ -96,12 +96,12 @@
                     <div id="columnchart_material" style="width: 900px; height: 500px;"></div>
                 </div>
             </div>
-            
+
         </div>
     </div>
-    
-    
-    <script src="javascript/jeneral.js"></script>
+
+
+    <script src="/javascript/jeneral.js"></script>
 </body>
 
 </html>

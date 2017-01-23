@@ -4,8 +4,16 @@
             include("db.php");
             $this->db = new db();
         }
+
+        public function send(){
+            $name = addslashes(trim($_POST["name"]));
+            $mail = addslashes(trim($_POST["mail"]));
+            $text = addslashes(trim($_POST["text"]));
+
+            $this->db->query("INSERT INTO messages(name,email,text,datetime) VALUES(?,?,?,NOW())",$name, $mail, $text);
+        }
+
         public function check_messages(){
-            $q = 1;
             $result = $this->db->query("SELECT * FROM messages WHERE active= ? ",1)->num();
             echo $result;
 
@@ -24,6 +32,9 @@
     $action = trim($_GET["action"]);
 
     switch ($action) {
+        case 'send':
+            $messages->send();
+            break;
 
         case 'check':
             $messages->check_messages();
@@ -33,9 +44,7 @@
             $messages->read_message();
             break;
 
-        case 'delete':
-            $site->delete_site();
-            break;
+
 
         default:
             # code...

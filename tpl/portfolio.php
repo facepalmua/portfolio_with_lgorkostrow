@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale= 1.0, user-scalable=no">
     <title>Admin panel</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/sweet-alert.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/sweet-alert.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="javascript/jQuery-v3.1.1.js"></script>
-    <script type="text/javascript" src="javascript/admin-script.js"></script>
-    <script src="../assets/js/sweet-alert.js"></script>
+    <script type="text/javascript" src="/javascript/jQuery-v3.1.1.js"></script>
+    <script type="text/javascript" src="/javascript/admin-script.js"></script>
+    <script src="/assets/js/sweet-alert.js"></script>
 
     <script>
     function getName(str) {
@@ -36,13 +36,13 @@
         <sidebar>
             <ul id="nav">
                 <li>
-                    <a href="?stat">Статистика</a>
+                    <a href="/admin/stat/">Статистика</a>
                 </li>
                 <li>
-                    <a href="?portfolio" class="selected">Добавления в портфолио</a>
+                    <a href="/admin/portfolio/" class="selected">Добавления в портфолио</a>
                 </li>
                 <li>
-                    <a href="?message">Сообщения <span class="active-message"><img src="images/znak.png" alt="znak" width="20px" height="20px"><span id="quantity"></span></span></a>
+                    <a href="/admin/message/">Сообщения <span class="active-message"><img src="/images/znak.png" alt="znak" width="20px" height="20px"><span id="quantity"></span></span></a>
                 </li>
             </ul>
         </sidebar>
@@ -84,7 +84,7 @@
                     <div class="portfolio-img">
                         <ul>
                             <?php foreach($this->site as $s) : ?>
-                                <li><a href="<?=$s['site']?>"><img src="../uploads/<?=$s['img']?>" alt="thumb1" width="240px" height="230px"></a>
+                                <li><a href="<?=$s['site']?>"><img src="/uploads/<?=$s['img']?>" alt="thumb1" width="240px" height="230px"></a>
                                     <br>
                                     <a class="delete_site large button red" id="<?=$s['id']?>">Удалить?</a><a class="edit_site large button orange" id="<?=$s['id']?>">Редактировать?</a>
                                 </li>
@@ -98,7 +98,7 @@
     </div>
     </div>
     </div>
-    <script src="javascript/jeneral.js"></script>
+    <script src="/javascript/jeneral.js"></script>
 </body>
 
 </html>

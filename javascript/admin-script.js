@@ -1,7 +1,7 @@
 function check_messages() {
     var str;
     $.ajax({
-        url: "lib/messages.php?action=check",
+        url: "/lib/messages.php?action=check",
         type: 'post',
         success: function(html) {
             //alert("1");
@@ -28,14 +28,13 @@ $(document).ready(function() {
         });
 
         $.ajax({
-            url: 'lib/site.php?action=uploadfiles',
+            url: '/lib/site.php?action=uploadfiles',
             data: data, //+ "&action=" + "add" + "&img=" + img + "&site=" + site + "&cat=" + cat,
             type: 'post',
             processData: false,
             contentType: false,
             dataType: 'html',
             success: function(html) {
-
                 sweetAlert("", "Картинка загружена", "success");
                 //location.reload();
 
@@ -55,7 +54,7 @@ $(document).ready(function() {
         var cat = $("#cat").val();
 
         $.ajax({
-            url: 'lib/site.php?action=add',
+            url: '/lib/site.php?action=add',
             data: {
                 img:$("#fileformlabel").text(),
                 site:$("#site").val(),
@@ -86,7 +85,7 @@ $(document).ready(function() {
             function() {
                 $.ajax({
                     type: "POST",
-                    url: "lib/site.php?action=delete",
+                    url: "/lib/site.php?action=delete",
                     data: {
                         id:delete_id
                     },
@@ -112,7 +111,7 @@ $(document).ready(function() {
             function() {
                 $.ajax({
                     type: "POST",
-                    url: "lib/site.php?action=edit",
+                    url: "/lib/site.php?action=edit",
                     data: {
                         id:edit_id,
                         img:$("#fileformlabel").text(),
@@ -132,7 +131,7 @@ $(document).ready(function() {
     $(".box").click(function() {
         id = $(this).attr("id");
         $.ajax({
-            url: 'lib/messages.php?action=read',
+            url: '/lib/messages.php?action=read',
             data: "id=" + id,
             type: 'post',
             success: function(html) {

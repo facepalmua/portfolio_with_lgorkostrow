@@ -4,11 +4,11 @@ class ctrl {
 
 	public function __construct() {
 		$this->db = new db();
-		
+
 		// if (!empty($_COOKIE['uid']) && !empty($_COOKIE['key'])) {
 		// 	$this->user = $this->db->query("SELECT * FROM admin WHERE id = ? AND cookie = ?",$_COOKIE['uid'],$_COOKIE['key'])->assoc();
 		// } else $this->user = false;
-		
+
 	}
 
 	public function out($tplname,$nested=false) {
@@ -17,7 +17,7 @@ class ctrl {
 		// 	include "tpl/stat.php";
 		// } else{
 			include "tpl/" . $tplname;
-		
+
 	}
 
 }
@@ -27,7 +27,7 @@ class app {
 	public function __construct($path) {
 		// http://blog.ramzes.name/?add
 		$this->route = explode('/', $path);
-
+		//echo var_dump($this->route);
 		$this->run();
 	}
 
@@ -50,16 +50,42 @@ class app {
 
 		$ctrl = new $ctrlName();
 
-		if (empty($this->route) || empty($this->route[0])) {
-			$ctrl->stat();
-		} else {
-			if (empty($this->route))
-				$method = 'index';
-			else
-				$method = array_shift($this->route);
+		if ( empty($this->route[1]) ) {
+			//$method = 'main';
+			$ctrl->main();
+		}
+		else {
+			if ( $this->route[1] == "admin" && isset($this->route[2]) ) {
+				switch ($this->route[2]) {
+		            case 'stat':
+		                $method = 'stat';
+		                break;
+
+		            case 'portfolio':
+		                $method = 'portfolio';
+		                break;
+
+		            case 'message':
+		                $method = 'message';
+		                break;
+
+		            default:
+		                $method = 'stat';
+		                break;
+		        }
+			} else {
+				$method = 'main';
+			}
+
+
+			// if (empty($this->route))
+			// 	$method = 'index';
+			//
+			// else
+			// 	$method = array_shift($this->route);
 			if (method_exists($ctrl, $method)) {
 				if (empty($this->route))
-				$ctrl->$method();
+					$ctrl->$method();
 				else
 					call_user_func_array (array($ctrl,$method), $this->route);
 			} else
