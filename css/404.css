@@ -1,0 +1,37 @@
+body {
+    background-size: cover;
+    font-family: serif;
+}
+
+.bgvideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -9999;
+}
+
+.container {
+    text-align: center;
+}
+
+.container p {
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    margin-left: -370px;
+    margin-top: -100px;
+    width: 700px;
+    font-size: 35px;
+    color: black;
+    background-color: #fff;
+    padding: 10px
+}
+
+.container span {
+    font-weight: 700;
+    font-size: 56px;
+}
