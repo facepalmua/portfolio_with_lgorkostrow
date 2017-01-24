@@ -59,6 +59,10 @@ class ctrlIndex extends ctrl {
 
 	}
 
+	function error(){
+		$this->out('error.php');
+	}
+
 	function del($id) {
 		if (!$this->user) return header("Location: /");
 

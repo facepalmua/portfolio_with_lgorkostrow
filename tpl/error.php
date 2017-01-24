@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML5 видео в качестве заднего фона</title>
-    <link rel="stylesheet" href="css/404.css">
+    <link rel="stylesheet" href="/css/404.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         </p>
     </div>
     <video autoplay loop muted class="bgvideo" id="bgvideo">
-        <source src="oeoq3Mu - Imgur.mp4
+        <source src="/video.mp4
 " type="video/mp4"></source>
     </video>
 </body>

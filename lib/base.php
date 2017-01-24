@@ -74,7 +74,7 @@ class app {
 		                break;
 		        }
 			} else {
-				$method = 'main';
+				$method = '';
 			}
 
 
@@ -89,7 +89,8 @@ class app {
 				else
 					call_user_func_array (array($ctrl,$method), $this->route);
 			} else
-				throw new Exception('Error 404');
+				//throw new Exception('Error 404');
+				$ctrl->error();
 		}
 	}
 
